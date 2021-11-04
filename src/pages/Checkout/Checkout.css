@@ -1,0 +1,48 @@
+.trapezoid {
+    border-bottom: 50px solid rgba(160, 158, 158, 0.11);
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 80%;
+    filter: drop-shadow(0px 97px 34px #7a7070) !important;
+    -webkit-filter: drop-shadow(0px 97px 34px #7a7070);
+    -moz-filter: drop-shadow(0px 97px 34px #7a7070);
+}
+
+.chair {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    background-color: rgb(123, 122, 122);
+}
+
+.chairBooked {
+    background-color: rgb(240, 56, 56) !important;
+    cursor: no-drop;
+}
+
+.chairBooking {
+    background-color: rgb(75, 211, 221) !important;
+}
+
+.chairVip {
+    background-color: #ffa400;
+}
+
+.chairUserLoginBooked {
+    border: 1px solid orange;
+    color: orange;
+    background-color: white !important;
+    -webkit-box-shadow: -1px 3px 13px 8px rgba(255, 166, 0, 0.5);
+    box-shadow: -1px 3px 13px 8px rgba(255, 166, 0, 0.432);
+}
+
+.chairUserOtherBooking {
+    border: 1px solid rgb(238, 89, 238);
+    color: rgb(238, 89, 238);
+    background-color: white;
+    cursor: no-drop;
+}
