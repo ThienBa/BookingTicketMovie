@@ -28,7 +28,7 @@ export const getInfoAccountApiAction = () => {
     return async dispatch => {
         try {
             const { data, status } = await manageUserServices.getInfoAccountApi();
-
+            console.log('data',data)
             if (status === STATUS_CODE.SUCCESS) {
                 dispatch({
                     type: SET_INFO_ACCOUNT_REDUCER,
@@ -36,6 +36,7 @@ export const getInfoAccountApiAction = () => {
                 })
             }
         } catch (err) {
+            console.log(err)
             SweetAlertError('Error getting info account!')
         }
     }

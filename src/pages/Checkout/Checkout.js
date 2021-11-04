@@ -10,6 +10,7 @@ import { history } from '../../App';
 import { SweetAlertSuccess } from '../../utils/SweetAlert/SweetAlert';
 import moment from 'moment';
 import { connection } from '../../index';
+import { getInfoAccountApiAction } from '../../redux/actions/UserActions';
 
 const flexCenter = {
     display: 'flex',
@@ -169,14 +170,14 @@ function Checkout(props) {
                     <p className="m-0">{userLogin.soDT}</p>
                 </div>
                 <div>
-                    <button onClick={() => {
+                    {_.size(listChairBooking) > 0 ? <button onClick={() => {
                         let infoBookTicket = new BookTicketModels();
                         infoBookTicket.maLichChieu = props.match.params.id;
                         infoBookTicket.danhSachVe = listChairBooking;
                         dispatch(bookTicketApiAction(infoBookTicket))
                     }} className="w-full mt-10 hover:bg-red-400 bg-red-500 transition duration-500 font-bold text-white py-2 rounded-xl">
                         Book tickets
-                    </button>
+                    </button> : ""}
                 </div>
             </div>
         </div>
@@ -225,6 +226,11 @@ export default function (props) {
 
 function ResultBookTicket() {
     const { arrInfoAccount } = useSelector(state => state.UserReducers);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getInfoAccountApiAction())
+    })
 
     const renderResultBookTicket = () => {
         return arrInfoAccount.thongTinDatVe.map((infoTicket, index) => {

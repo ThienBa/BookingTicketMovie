@@ -6,9 +6,9 @@ export default function Loading() {
     if (!isLoading) {
         return "";
     }
-    
+
     return (
-        <div className="flex items-center justify-center" style={{ position: 'fixed', width: '100%', height: '100%', backgroundColor: 'rgba(255,255,255,0.9)', zIndex: 99 }}>
+        <div className="flex items-center justify-center" style={{ position: 'fixed', width: '100%', height: '100%', backgroundColor: 'rgba(255,255,255,1)', zIndex: 99 }}>
             <div>
                 <img src={require("../../assets/images/loading.gif").default} alt="loading" />
             </div>

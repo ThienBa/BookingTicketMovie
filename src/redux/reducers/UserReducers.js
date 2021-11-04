@@ -20,6 +20,7 @@ export const UserReducers = (state = initialState, action) => {
 
             return { ...state, userLogin: action.infoUserLogin }
         }
+        
         case SET_INFO_ACCOUNT_REDUCER: {
             return { ...state, arrInfoAccount: action.arrInfoAccount }
         }

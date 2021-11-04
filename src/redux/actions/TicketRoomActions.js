@@ -22,17 +22,16 @@ export const setChairBookingAction = (chair, idShowtime) => {
         const { taiKhoan } = getState().UserReducers.userLogin;
 
         listChairBooking = JSON.stringify(listChairBooking);
-        // console.log({ idShowtime })
-        // console.log({ listChairBooking })
-        // console.log({ taiKhoan })
 
         //Call api signalR
-        connection.invoke('datGhe', taiKhoan, listChairBooking, idShowtime);
+        // connection.invoke('datGhe', taiKhoan, listChairBooking, idShowtime);
     }
 }
 
 export const getListTicketRoomApiAction = (idShowtime) => {
     return async dispatch => {
+        dispatch(displayLoadingAction())
+
         try {
             const { data, status } = await manageBookTicketServices.getListTicketRoomApi(idShowtime);
 
@@ -45,6 +44,7 @@ export const getListTicketRoomApiAction = (idShowtime) => {
         } catch (err) {
             SweetAlertError('Error getting list ticket room!')
         }
+        dispatch(hideLoadingAction())
     }
 }
 
