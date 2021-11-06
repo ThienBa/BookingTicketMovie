@@ -7,6 +7,7 @@ import MovieAnimateHover from "../Movie/MovieAnimateHover";
 import { useDispatch, useSelector } from 'react-redux';
 import { setCommingSoonMovieActions, setShowingMovieActions } from "../../redux/actions/MovieActions";
 import { getListMovieApiActions } from '../../redux/actions/MovieActions';
+import { useTranslation } from 'react-i18next';
 
 
 function SampleNextArrow(props) {
@@ -37,6 +38,8 @@ function SamplePrevArrow(props) {
 const MultipleRowsSlick = (props) => {
     const dispatch = useDispatch();
     const { showing, commingSoon } = useSelector(state => state.MovieReducers);
+    const { t } = useTranslation();
+
     const renderMovies = () => {
         return props.arrMovieProps?.splice(0, 12).map((movie, index) => {
             return <div className="mt-2" key={index}  >
@@ -63,23 +66,9 @@ const MultipleRowsSlick = (props) => {
     const ACTIVE_COMMING_SOON = commingSoon ? 'active' : 'noneActive';
 
     return (
-        <Fragment>
-            <button className={`${styleSlick[ACTIVE_SHOWING]}  px-5 py-1 rounded-xl mr-3 font-bold`} onClick={() => {
-                dispatch(setShowingMovieActions())
-                if ((!showing && commingSoon) || (showing && !commingSoon)) {
-                    dispatch(getListMovieApiActions())
-                }
-            }}>SHOWING</button>
-            <button className={`${styleSlick[ACTIVE_COMMING_SOON]}  px-5 py-1 rounded-xl font-bold `} onClick={() => {
-                dispatch(setCommingSoonMovieActions())
-                if ((!showing && commingSoon) || (showing && !commingSoon)) {
-                    dispatch(getListMovieApiActions())
-                }
-            }}>COMMING SOON</button>
-            <Slider {...settings}>
-                {renderMovies()}
-            </Slider>
-        </Fragment>
+        <Slider {...settings}>
+            {renderMovies()}
+        </Slider>
     )
 }
 export default memo(MultipleRowsSlick);

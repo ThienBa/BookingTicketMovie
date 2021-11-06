@@ -1,5 +1,5 @@
 import { TicketRoomModels } from "../../_core/models/TicketRoomModels"
-import { SET_LIST_TICKET_ROOM_REDUCER, SET_LIST_CHAIR_BOOKING_REDUCER, RESET_LIST_CHAIR_BOOKING, MOVE_TAB_TICKET_BOOKING_RESULTS, CHANGE_TAB } from "../types/TicketRoomTypes"
+import { SET_LIST_TICKET_ROOM_REDUCER, SET_LIST_CHAIR_BOOKING_REDUCER, RESET_LIST_CHAIR_BOOKING, MOVE_TAB_TICKET_BOOKING_RESULTS, CHANGE_TAB, SET_CHAIR_USER_OTHER_BOOKING } from "../types/TicketRoomTypes"
 
 const initialState = {
     arrTicketRoom: new TicketRoomModels(),
@@ -56,6 +56,10 @@ export const TicketRoomReducers = (state = initialState, action) => {
 
         case CHANGE_TAB: {
             return { ...state, tabActive: action.number };
+        }
+
+        case SET_CHAIR_USER_OTHER_BOOKING: {
+            return { ...state, listChairUserOtherBooking: action.arrChairUserOtherBooking}
         }
 
         default:

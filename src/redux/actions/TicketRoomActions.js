@@ -1,4 +1,4 @@
-import { connection } from '../../index';
+// import { connection } from '../../index';
 import { manageBookTicketServices } from '../../services/ManageBookTicketServices';
 import { STATUS_CODE } from '../../utils/settings/config';
 import { SweetAlertError, SweetAlertSuccess } from '../../utils/SweetAlert/SweetAlert';
@@ -18,10 +18,10 @@ export const setChairBookingAction = (chair, idShowtime) => {
             chair
         })
 
-        let { listChairBooking } = getState().TicketRoomReducers;
-        const { taiKhoan } = getState().UserReducers.userLogin;
+        // let { listChairBooking } = getState().TicketRoomReducers;
+        // const { taiKhoan } = getState().UserReducers.userLogin;
 
-        listChairBooking = JSON.stringify(listChairBooking);
+        // listChairBooking = JSON.stringify(listChairBooking);
 
         //Call api signalR
         // connection.invoke('datGhe', taiKhoan, listChairBooking, idShowtime);

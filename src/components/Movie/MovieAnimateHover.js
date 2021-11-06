@@ -2,9 +2,11 @@ import React from 'react';
 import './MovieAnimateHover.css';
 import { PlayCircleOutlined } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function MovieAnimateHover(props) {
-    const { hinhAnh, tenPhim, maPhim,biDanh } = props.movie;
+    const { t } = useTranslation();
+    const { hinhAnh, tenPhim, maPhim, biDanh } = props.movie;
 
     return (
         <>
@@ -30,7 +32,7 @@ export default function MovieAnimateHover(props) {
                 </div>
             </div>
             <div className="flex justify-center">
-                <NavLink to={`/detail/${maPhim}-${biDanh}`} className="hover:text-white bg-orange-300 text-center cursor-pointer py-2 bg-green-300 rounded-sm my-2 text-success-50 font-bold text-white w-72">BUY TICKET</NavLink>
+                <NavLink to={`/detail/${maPhim}-${biDanh}`} className="hover:text-white bg-orange-300 text-center cursor-pointer py-2 bg-green-300 rounded-sm my-2 text-success-50 font-bold text-white w-72">{t('buyTicket')}</NavLink>
             </div>
         </>
     )

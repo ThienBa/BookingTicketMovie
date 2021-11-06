@@ -34,7 +34,7 @@ function HomeTabPane(props) {
                                         <h3>{movie.tenPhim}</h3>
                                         <div className="grid grid-cols-8 gap-2 font-bold">
                                             {movie.lstLichChieuTheoPhim?.slice(0, 12).map((showCalendar, index) => {
-                                                return <NavLink to="/" key={index} className="hover:text-green-600 m-0 border border-green-600 rounded-lg text-green-600 px-1">{moment(showCalendar.ngayChieuGioChieu).format('hh:mm A')}</NavLink>
+                                                return <NavLink to={`/checkout/${showCalendar.maLichChieu}`} key={index} className="hover:text-green-600 m-0 border border-green-600 rounded-lg text-green-600 px-1">{moment(showCalendar.ngayChieuGioChieu).format('hh:mm A')}</NavLink>
                                             })}
                                         </div>
                                     </div>

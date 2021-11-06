@@ -6,10 +6,12 @@ import { Tabs, Rate } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovieShowtimeInfoApiActions } from '../../redux/actions/CinemaSystemActions';
 import moment from 'moment';
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 const { TabPane } = Tabs;
 
 export default function Detail(props) {
+    const { t } = useTranslation();
     const { movieDetail } = useSelector(state => state.CinemaSystemReducers);
     const dispatch = useDispatch();
 
@@ -53,7 +55,7 @@ export default function Detail(props) {
                             </div>
                             <div>
                                 <Rate style={{ color: '#EF4444' }} allowHalf value={movieDetail.danhGia / 2} />
-                                <p className="text-center font-bold">Rate</p>
+                                <p className="text-center font-bold">{t('rate')}</p>
                             </div>
                         </div>
                     </div>
@@ -61,7 +63,7 @@ export default function Detail(props) {
                 <div className="grid grid-cols-12 mt-20">
                     <div className="col-span-12 col-start-3 col-end-11 bg-white rounded-sm" >
                         <Tabs tabPosition='top' centered style={{ minHeight: '300px' }}>
-                            <TabPane tab={<div className="text-xl">Showtimes</div>} key="1" >
+                            <TabPane tab={<div className="text-xl">{t('showtimes')}</div>} key="1" >
                                 <Tabs tabPosition='left'>
                                     {movieDetail.heThongRapChieu?.map((cinema, index) => {
                                         return <TabPane tab={
@@ -99,10 +101,10 @@ export default function Detail(props) {
 
                                 </Tabs>
                             </TabPane>
-                            <TabPane tab={<div className="text-xl">Info</div>} key="2">
+                            <TabPane tab={<div className="text-xl">{t('info')}</div>} key="2">
                                 <p className="ml-3">Info</p>
                             </TabPane>
-                            <TabPane tab={<div className="text-xl">Rate</div>} key="3">
+                            <TabPane tab={<div className="text-xl">{t('rate')}</div>} key="3">
                                 <p className="ml-3">Rate</p>
                             </TabPane>
                         </Tabs>
