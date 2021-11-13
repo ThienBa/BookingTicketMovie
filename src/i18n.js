@@ -35,7 +35,18 @@ const resources = {
             "chairUserLoginBooked": 'Chair user login booked',
             "screen": 'Screen',
             "yourBookingResult": 'Your booked result',
-            "haveAGoodTimeWatchingTheMovie": 'Have a good time watching the movie.'
+            "haveAGoodTimeWatchingTheMovie": 'Have a good time watching the movie.',
+            "personalInfomation": 'Personal infomation',
+            "bookingHistory": 'Booking history',
+            "email": 'Email',
+            "fullname": 'Fullname',
+            "phoneNumber": 'Phone number',
+            "username": 'Username',
+            "password": 'Password',
+            "editInfo": 'Edit info',
+            "bookingDate": 'Booking date',
+            "showDate": 'Show date',
+            "update": 'Update'
         }
     },
     japan: {
@@ -71,7 +82,18 @@ const resources = {
             "chairUserLoginBooked": 'チェアユーザーのログインが予約されました',
             "screen": '画面',
             "yourBookingResult": '予約結果',
-            "haveAGoodTimeWatchingTheMovie": '映画を見て楽しい時間を過ごしてください。'
+            "haveAGoodTimeWatchingTheMovie": '映画を見て楽しい時間を過ごしてください。',
+            "personalInfomation": '個人情報',
+            "bookingHistory": '予約履歴',
+            "email": 'Eメール',
+            "fullname": 'フルネーム',
+            "phoneNumber": '電話番号',
+            "username": 'ユーザー名',
+            "password": 'パスワード',
+            'editInfo': '情報を編集',
+            "bookingDate": '予約日',
+            "showDate": '日付を表示',
+            "update": 'アップデート'
         }
     },
     vietnamese: {
@@ -107,7 +129,18 @@ const resources = {
             "chairUserLoginBooked": 'Ghế bạn đặt',
             "screen": 'Màn hình',
             "yourBookingResult": 'Kết quả đặt vé của bạn',
-            "haveAGoodTimeWatchingTheMovie": 'Chúc các bạn xem phim vui vẻ.'
+            "haveAGoodTimeWatchingTheMovie": 'Chúc các bạn xem phim vui vẻ.',
+            "personalInfomation": 'Thông tin cá nhân',
+            "bookingHistory": 'Lịch sử đặt vé',
+            "email": 'Email',
+            "fullname": 'Họ & tên',
+            "phoneNumber": 'Số điện thoại',
+            "username": 'Tên đăng nhập',
+            "password": 'Mật khẩu',
+            'editInfo': 'Chỉnh sửa thông tin',
+            "bookingDate": 'Ngày đặt',
+            "showDate": 'Ngày chiếu',
+            "update": 'Cập nhật'
         }
     },
 };
