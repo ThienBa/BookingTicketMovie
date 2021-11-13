@@ -36,7 +36,6 @@ export default function Profile() {
         },
         onSubmit: async values => {
             await dispatch(updateInfoPutUserApiAction(values));
-            setDisplayInput(false);
         }
     })
 

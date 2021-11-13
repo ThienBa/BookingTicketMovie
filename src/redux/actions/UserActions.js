@@ -63,14 +63,15 @@ export const registerAccountApiAction = (newAccount) => {
 }
 
 export const updateInfoPutUserApiAction = (infoUpdate) => {
-    return async () => {
+    return async dispatch => {
         try {
             const { status } = await manageUserServices.updateInfoUserPutApi(infoUpdate);
             if (status === STATUS_CODE.SUCCESS) {
+                dispatch(getInfoAccountApiAction())
                 SweetAlertSuccess('Update info account successful')
             }
         } catch (err) {
-            SweetAlertError('Error update info account!')
+            SweetAlertError('Email already exists!')
         }
     }
 }
@@ -154,7 +155,7 @@ export const updateInfoPostUserApiAction = (infoUpdate) => {
                 SweetAlertSuccess('Update info account successful')
             }
         } catch (err) {
-            SweetAlertError('Error update info account!')
+            SweetAlertError('Email already exists!')
         }
     }
 }
