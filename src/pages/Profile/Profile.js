@@ -49,8 +49,8 @@ export default function Profile() {
                         <img alt={infoTicket.tenPhim} className="w-24 h-24 bg-gray-100 object-cover object-center flex-shrink-0  mr-4" src={infoTicket.hinhAnh} />
                         <div className="flex-grow">
                             <h2 className="text-green-500 title-font font-medium m-0">{infoTicket.tenPhim}</h2>
-                            <p className="text-gray-500 m-0">Booking date: {moment(infoTicket.ngayDat).format('DD/MM/YYYY hh:mm A')}</p>
-                            <p className="text-gray-500 m-0">Show date: {moment(infoTicket.ngayChieu).format('DD/MM/YYYY hh:mm A')}</p>
+                            <p className="text-gray-500 m-0">{t('bookingDate')}: {moment(infoTicket.ngayDat).format('DD/MM/YYYY hh:mm A')}</p>
+                            <p className="text-gray-500 m-0">{t('showDate')}: {moment(infoTicket.ngayChieu).format('DD/MM/YYYY hh:mm A')}</p>
                             <p className="m-0">{CHAIRS_LODASH.tenHeThongRap}</p>
                             <p className="m-0">
                                 {CHAIRS_LODASH.tenCumRap} -
@@ -79,12 +79,12 @@ export default function Profile() {
             }}>
                 <div className="flex items-center justify-center h-full">
                     <Tabs defaultActiveKey="1" className="border rounded-sm" style={{ padding: '10px 20px', minWidth: 600 }}>
-                        <TabPane tab={<div className="text-white">Personal infomation</div>} key="1">
+                        <TabPane tab={<div className="text-white">{t('personalInfomation')}</div>} key="1">
                             <form className="text-white px-10" onSubmit={formik.handleSubmit}>
                                 <div className="grid grid-cols-12">
                                     <div className="col-span-6 mr-3">
                                         <div className="flex gap-1 justify-between">
-                                            <label htmlFor="email" className="font-bold">Email: </label>
+                                            <label htmlFor="email" className="font-bold">{t('email')}: </label>
                                             <div>
                                                 {displayInput ? <input
                                                     className={`${formik.touched.email && Boolean(formik.errors.email) ? 'border-red-500 bg-red-100' : null} w-60 px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline`}
@@ -97,7 +97,7 @@ export default function Profile() {
                                             </div>
                                         </div>
                                         <div className="flex gap-1 justify-between my-3">
-                                            <label htmlFor="hoTen" className="font-bold">Fullname: </label>
+                                            <label htmlFor="hoTen" className="font-bold">{t('fullname')}: </label>
                                             <div>
                                                 {displayInput ? <input className={`${formik.touched.hoTen && Boolean(formik.errors.hoTen) ? 'border-red-500 bg-red-100' : null} w-60 px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline`} type="text" name="hoTen" id="hoTen"
                                                     onChange={formik.handleChange}
@@ -105,7 +105,7 @@ export default function Profile() {
                                             </div>
                                         </div>
                                         <div className="flex gap-1 justify-between">
-                                            <label htmlFor="soDt" className="font-bold">Phone number: </label>
+                                            <label htmlFor="soDt" className="font-bold">{t('phoneNumber')}: </label>
                                             <div>
                                                 {displayInput ? <input className={`${formik.touched.soDt && Boolean(formik.errors.soDt) ? 'border-red-500 bg-red-100' : null} w-60 px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline`} type="text" name="soDt" id="soDt"
                                                     onChange={formik.handleChange}
@@ -116,11 +116,11 @@ export default function Profile() {
                                     </div>
                                     <div className="col-span-6 ml-3">
                                         <div className="flex gap-1 justify-between">
-                                            <label htmlFor="taiKhoan" className="font-bold">Username: </label>
+                                            <label htmlFor="taiKhoan" className="font-bold">{t('username')}: </label>
                                             <p>{arrInfoAccount.taiKhoan}</p>
                                         </div>
                                         <div className="flex gap-1 my-3 justify-between">
-                                            <label htmlFor="matKhau" className="font-bold">Password: </label>
+                                            <label htmlFor="matKhau" className="font-bold">{t('password')}: </label>
                                             <div>
                                                 {displayInput ? <input type="password" className={`${formik.touched.matKhau && Boolean(formik.errors.matKhau) ? 'border-red-500 bg-red-100' : null} w-60 px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline`} name="matKhau" id="matKhau"
                                                     onChange={formik.handleChange}
@@ -130,13 +130,13 @@ export default function Profile() {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    {displayInput ? <button type="submit" className="rounded-lg mt-3 px-3 py-1 font-medium bg-green-500">Update</button> : <div onClick={() => {
+                                    {displayInput ? <button type="submit" className="rounded-lg mt-3 px-3 py-1 font-medium bg-green-500">{t('update')}</button> : <div onClick={() => {
                                         setDisplayInput(true)
-                                    }} className="underline text-green-500 font-medium cursor-pointer">Edit info</div>}
+                                    }} className="underline text-green-500 font-medium cursor-pointer">{t('editInfo')}</div>}
                                 </div>
                             </form>
                         </TabPane>
-                        <TabPane tab={<div className="text-white">Booking history</div>} key="2">
+                        <TabPane tab={<div className="text-white">{t('bookingHistory')}</div>} key="2">
                             <div className="grid grid-cols-12 gap-2">
                                 {renderBookingHistory()}
                             </div>

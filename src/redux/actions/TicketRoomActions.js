@@ -1,4 +1,3 @@
-// import { connection } from '../../index';
 import { history } from '../../App';
 import { manageBookTicketServices } from '../../services/ManageBookTicketServices';
 import { STATUS_CODE } from '../../utils/settings/config';
@@ -12,20 +11,12 @@ export const changeTableAction = (number) => ({
     number
 })
 
-export const setChairBookingAction = (chair, idShowtime) => {
-    return async (dispatch, getState) => {
+export const setChairBookingAction = (chair) => {
+    return async (dispatch) => {
         dispatch({
             type: SET_LIST_CHAIR_BOOKING_REDUCER,
             chair
         })
-
-        // let { listChairBooking } = getState().TicketRoomReducers;
-        // const { taiKhoan } = getState().UserReducers.userLogin;
-
-        // listChairBooking = JSON.stringify(listChairBooking);
-
-        // // Call api signalR
-        // connection.invoke('datGhe', taiKhoan, listChairBooking, idShowtime);
     }
 }
 
