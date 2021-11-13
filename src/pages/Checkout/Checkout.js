@@ -12,9 +12,6 @@ import moment from 'moment';
 import { getInfoAccountApiAction } from '../../redux/actions/UserActions';
 import { USER_LOGIN, TOKEN } from '../../utils/settings/config';
 import { useTranslation } from 'react-i18next';
-// import { connection } from '../../index';
-// import { SET_CHAIR_USER_OTHER_BOOKING } from '../../redux/types/TicketRoomTypes';
-
 
 const flexCenter = {
     display: 'flex',
@@ -33,44 +30,7 @@ function Checkout(props) {
 
     useEffect(() => {
         dispatch(getListTicketRoomApiAction(props.match.params.id))
-        // connection.on('datVeThanhCong', () => {
-        //     //If there is a user who successfully booked the ticket => reload get list ticket of that showtime
-        //     dispatch(getListTicketRoomApiAction(props.match.params.id))
-        // })
-        // //Just entered the page to load all the chairs other people are booking
-        // connection.invoke('loadDanhSachGhe', props.match.params.id)
-        // // Load the list of chairs being ordered from the server
-        // connection.on('loadDanhSachGheDaDat', (listChairUserOtherBooking) => {
-        //     //Step 1: Remove yourself from the list
-        //     listChairUserOtherBooking = listChairUserOtherBooking.filter(chairUserOtherBooking => chairUserOtherBooking.taiKhoan !== userLogin.taiKhoan)
-        //     //Step 2: Merge array of other users booking
-        //     let arrChairUserOtherBooking = listChairUserOtherBooking.reduce((result, item, index) => {
-        //         const listChair = JSON.parse(item);
-        //         return [...result, ...listChair];
-        //     }, [])
-
-        //     //Step 3: Remove duplicate elements
-        //     arrChairUserOtherBooking = _.uniqBy(arrChairUserOtherBooking, ['maGhe']);
-
-        //     //Step 4: Dispath to reducer
-        //     dispatch({
-        //         type: SET_CHAIR_USER_OTHER_BOOKING,
-        //         arrChairUserOtherBooking
-        //     })
-        // })
-        // //Event settings reload page => clear chair booking
-        // window.addEventListener("beforeunload", clearGhe);
-
-        // return () => {
-        //     //When turning pages => clear chair booking
-        //     clearGhe();
-        //     window.removeEventListener("beforeunload", clearGhe);
-        // }
     }, [])
-
-    // const clearGhe = function () {
-    //     connection.invoke('huyDat', userLogin.taiKhoan, props.match.params.id);
-    // }
 
     const renderChair = () => {
         return danhSachGhe.map((chair, index) => {
