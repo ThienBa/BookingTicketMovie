@@ -14,6 +14,14 @@ import { UserTemplate } from "./templates/UserTemplate/UserTemplate";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Loading from "./components/Loading/Loading";
 import Profile from "./pages/Profile/Profile";
+import AdminTemplate from "./templates/AdminTemplate/AdminTemplate";
+import Showtimes from "./pages/Admin/Movies/Showtimes/Showtimes";
+import Movies from "./pages/Admin/Movies/Movies";
+import Users from "./pages/Admin/Users/Users";
+import AddNewMovie from "./pages/Admin/Movies/AddNewMovie/AddNewMovie";
+import EditMovie from "./pages/Admin/Movies/EditMovie/EditMovie";
+import AddNewUser from "./pages/Admin/Users/AddNewUser/AddNewUser";
+import EditUser from "./pages/Admin/Users/EditUser/EditUser";
 
 export const history = createBrowserHistory();
 
@@ -22,6 +30,16 @@ function App() {
     <Router history={history}>
       <Loading />
       <Switch>
+        <AdminTemplate exact path="/admin" Component={Users} />
+        <AdminTemplate exact path="/admin/users" Component={Users} />
+        <AdminTemplate exact path="/admin/users/addnewuser" Component={AddNewUser} />
+        <AdminTemplate exact path="/admin/users/edit/:username" Component={EditUser} />
+
+        <AdminTemplate exact path="/admin/movies" Component={Movies} />
+        <AdminTemplate exact path="/admin/movies/addnewmovie" Component={AddNewMovie} />
+        <AdminTemplate exact path="/admin/movies/edit/:id-:nameMovie" Component={EditMovie} />
+        <AdminTemplate exact path="/admin/movies/showtimes/:id-:nameMovie" Component={Showtimes} />
+
         <CheckoutTemplate exact path="/checkout/:id" Component={Checkout} />
         <UserTemplate exact path="/register" Component={Register} />
         <UserTemplate exact path="/login" Component={Login} />

@@ -2,8 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { loginApiAction } from '../../redux/actions/UserActions';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 
 export default function Login() {
     const dispatch = useDispatch();
@@ -31,10 +30,10 @@ export default function Login() {
                             </label>
                             <form onSubmit={formik.handleSubmit} className="mt-10">
                                 <div>
-                                    <input type="username" onChange={formik.handleChange} name="taiKhoan" placeholder="Username" className="focus:outline-none px-2 mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" />
+                                    <input type="text" onChange={formik.handleChange} name="taiKhoan" placeholder="Username" className="focus:outline-none px-2 mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" />
                                 </div>
                                 <div className="mt-7">
-                                    <input type="password" onChange={formik.handleChange} name="matKhau" placeholder="Passowrd" className="focus:outline-none px-2 mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" />
+                                    <input type="password" onChange={formik.handleChange} name="matKhau" placeholder="Password" className="focus:outline-none px-2 mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" />
                                 </div>
                                 <div className="mt-7 flex">
                                     <label htmlFor="remember_me" className="inline-flex items-center w-full cursor-pointer">

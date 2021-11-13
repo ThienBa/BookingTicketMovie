@@ -18,9 +18,6 @@ export default function Home() {
     const dispatch = useDispatch();
     const { t } = useTranslation();
 
-    console.log({arrMovieShowing})
-    console.log({arrMovieCommingSoon})
-
     useEffect(() => {
         dispatch(getListMovieApiActions())
         dispatch(getCinemaSystemApiActions())

@@ -40,6 +40,7 @@ export default function Header() {
                 localStorage.removeItem(USER_LOGIN);
                 localStorage.removeItem(TOKEN);
                 history.push('/home')
+                SweetAlertSuccess("You are logout");
                 window.location.reload();
             }} className="mx-2 mb-0 text-green-400 font-thin">{t('logout')}</button>
         </div>

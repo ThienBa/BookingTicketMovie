@@ -1,4 +1,5 @@
 // import { connection } from '../../index';
+import { history } from '../../App';
 import { manageBookTicketServices } from '../../services/ManageBookTicketServices';
 import { STATUS_CODE } from '../../utils/settings/config';
 import { SweetAlertError, SweetAlertSuccess } from '../../utils/SweetAlert/SweetAlert';
@@ -23,7 +24,7 @@ export const setChairBookingAction = (chair, idShowtime) => {
 
         // listChairBooking = JSON.stringify(listChairBooking);
 
-        //Call api signalR
+        // // Call api signalR
         // connection.invoke('datGhe', taiKhoan, listChairBooking, idShowtime);
     }
 }
@@ -66,6 +67,24 @@ export const bookTicketApiAction = (infoBookTicket = new BookTicketModels()) => 
             }
         } catch (err) {
             SweetAlertError('Error booking ticket!')
+        }
+
+        dispatch(hideLoadingAction())
+    }
+}
+
+export const createShowtimesApiAction = (newShowtimes) => {
+    return async dispatch => {
+        dispatch(displayLoadingAction())
+
+        try {
+            const { status } = await manageBookTicketServices.createShowtimesApi(newShowtimes);
+            if (status === STATUS_CODE.SUCCESS) {
+                history.push('/admin/movies')
+                SweetAlertSuccess('Create showtimes successful!')
+            }
+        } catch (err) {
+            SweetAlertError('Error create showtimes!')
         }
 
         dispatch(hideLoadingAction())

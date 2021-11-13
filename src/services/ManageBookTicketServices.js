@@ -13,6 +13,10 @@ class ManageBookTicketServices extends baseServices {
     bookTicketApi = (infoBookTicket = new BookTicketModels()) => {
         return this.post(`/api/QuanLyDatVe/DatVe`, infoBookTicket);
     }
+
+    createShowtimesApi = (newShowtimes) => {
+        return this.post(`/api/QuanLyDatVe/TaoLichChieu`, newShowtimes);
+    }
 }
 
 export const manageBookTicketServices = new ManageBookTicketServices();

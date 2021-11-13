@@ -1,13 +1,19 @@
 import _ from 'lodash';
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { getCinemaSystemApiActions } from '../../../../redux/actions/CinemaSystemActions';
 
 export default function Footer() {
     const { arrCinemaSystem } = useSelector(state => state.CinemaSystemReducers);
     const arrPartner = _.map(arrCinemaSystem, theaterSystem => _.pick(theaterSystem, ['logo', 'tenHeThongRap']))
     const { t } = useTranslation();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getCinemaSystemApiActions())
+    }, [])
 
     const renderPartner = () => {
         return arrPartner.map((partner, index) => {

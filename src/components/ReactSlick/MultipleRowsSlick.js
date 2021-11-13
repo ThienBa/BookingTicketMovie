@@ -36,12 +36,8 @@ function SamplePrevArrow(props) {
 
 
 const MultipleRowsSlick = (props) => {
-    const dispatch = useDispatch();
-    const { showing, commingSoon } = useSelector(state => state.MovieReducers);
-    const { t } = useTranslation();
-
     const renderMovies = () => {
-        return props.arrMovieProps?.splice(0, 12).map((movie, index) => {
+        return props.arrMovieProps?.map((movie, index) => {
             return <div className="mt-2" key={index}  >
                 <MovieAnimateHover movie={movie} />
             </div>
@@ -61,9 +57,6 @@ const MultipleRowsSlick = (props) => {
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
     };
-
-    const ACTIVE_SHOWING = showing ? 'active' : 'noneActive';
-    const ACTIVE_COMMING_SOON = commingSoon ? 'active' : 'noneActive';
 
     return (
         <Slider {...settings}>

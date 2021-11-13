@@ -9,9 +9,17 @@ class ManageCinemaServices extends baseServices {
     getCinemaSystemApi = () => {
         return this.get(`/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=${GROUP_CODE}`);
     }
-    
+
     getMovieShowtimeInfoApi = (idMovie) => {
         return this.get(`/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${idMovie}`);
+    }
+
+    getInfoCinemaSystemApi = () => {
+        return this.get(`/api/QuanLyRap/LayThongTinHeThongRap`);
+    }
+
+    getInfoClusterCinemaFollowSystemApi = (systemCinemaCode) => {
+        return this.get(`/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${systemCinemaCode}`);
     }
 }
 

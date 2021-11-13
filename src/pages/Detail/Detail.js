@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { CustomCard } from '@tsamantanis/react-glassmorphism';
 import '@tsamantanis/react-glassmorphism/dist/index.css';
 import '../../assets/styles/PercentageCircle.css';
 import { Tabs, Rate } from 'antd';
@@ -22,13 +21,14 @@ export default function Detail(props) {
 
     return (
         <div style={{ backgroundImage: `url(${movieDetail.hinhAnh})`, backgroundSize: 'cover', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat' }}>
-            <CustomCard
-                style={{ minHeight: '100vh' }}
-                effectColor="#fff"
-                color="#fff"
-                blur={20}
-                borderRadius={0}
-            >
+            <div style={{
+                margin: '0 auto',
+                background: 'rgba(16,18,27,0.9)',
+                border: '1px solid rgba( 255, 255, 255, 0.18 )',
+                borderRadius: '10px',
+                backdropFilter: 'blur(2px)',
+                color: 'white'
+            }}>
                 <div className="grid grid-cols-12 mt-48">
                     <div className="col-span-4 col-start-3 col-end-8">
                         <div className="grid grid-cols-3 gap-5">
@@ -60,7 +60,7 @@ export default function Detail(props) {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-12 mt-20">
+                <div className="grid grid-cols-12 my-20">
                     <div className="col-span-12 col-start-3 col-end-11 bg-white rounded-sm" >
                         <Tabs tabPosition='top' centered style={{ minHeight: '300px' }}>
                             <TabPane tab={<div className="text-xl">{t('showtimes')}</div>} key="1" >
@@ -110,7 +110,7 @@ export default function Detail(props) {
                         </Tabs>
                     </div>
                 </div>
-            </CustomCard>
+            </div>
         </div>
     )
 }

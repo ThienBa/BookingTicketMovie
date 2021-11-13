@@ -4,7 +4,7 @@ import { DOMAIN, TOKEN } from "../utils/settings/config";
 export class baseServices {
     post = (url, data) => {
         return Axios({
-            url: `${DOMAIN}/${url}`,
+            url: `${DOMAIN}${url}`,
             method: 'POST',
             data,
             headers: { "Authorization": "Bearer " + localStorage.getItem(TOKEN) },
@@ -12,7 +12,7 @@ export class baseServices {
     }
     put = (url, data) => {
         return Axios({
-            url: `${DOMAIN}/${url}`,
+            url: `${DOMAIN}${url}`,
             method: 'PUT',
             data,
             headers: { "Authorization": "Bearer " + localStorage.getItem(TOKEN) },
@@ -20,14 +20,14 @@ export class baseServices {
     }
     get = (url) => {
         return Axios({
-            url: `${DOMAIN}/${url}`,
+            url: `${DOMAIN}${url}`,
             method: 'GET',
             headers: { "Authorization": "Bearer " + localStorage.getItem(TOKEN) },
         })
     }
     delete = (url) => {
         return Axios({
-            url: `${DOMAIN}/${url}`,
+            url: `${DOMAIN}${url}`,
             method: 'DELETE',
             headers: { "Authorization": "Bearer " + localStorage.getItem(TOKEN) },
         })
