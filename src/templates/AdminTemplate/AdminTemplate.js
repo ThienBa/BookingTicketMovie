@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Redirect, Route } from "react-router";
 import { Layout, Menu, Dropdown } from 'antd';
 import {
-    FieldTimeOutlined,
     VideoCameraOutlined,
     UserOutlined,
     LogoutOutlined,
@@ -15,7 +14,6 @@ import _ from "lodash";
 import { history } from "../../App";
 import { NavLink } from "react-router-dom";
 const { Header, Content, Sider } = Layout;
-const { SubMenu } = Menu;
 
 
 

@@ -16,3 +16,11 @@ export const SweetAlertError = (message) => {
         'error'
     )
 }
+
+export const SweetAlertWarning = (message) => {
+    return Swal.fire(
+        message,
+        '',
+        'warning'
+    )
+}

@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { Redirect, Route } from "react-router";
 import { USER_LOGIN } from "../../utils/settings/config";
+import { SweetAlertWarning } from "../../utils/SweetAlert/SweetAlert";
 
 
 
@@ -11,6 +12,7 @@ const CheckoutTemplate = (props) => {
     })
 
     if (!localStorage.getItem(USER_LOGIN)) {
+        SweetAlertWarning('Please login before booking!')
         return <Redirect to="/login" />
     }
 
